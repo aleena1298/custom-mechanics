@@ -1,0 +1,54 @@
+
+.text-main {
+  background: #000;
+  min-height: 200vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1rem;
+  box-sizing: border-box;
+}
+
+
+.text-main-heading {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  line-height: 0.85;
+  margin: 0;
+  width: 100%;
+  max-width: 1006.28px;
+}
+
+.text-main-line {
+  display: block;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+
+  font-size: clamp(2.2rem, 15vw, 15rem);
+  line-height: inherit;
+
+  color: transparent;
+
+  -webkit-text-stroke: 0.2px #ffffff;
+  text-stroke: 0.2px #ffffff;
+
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 100%
+  );
+
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  will-change: background-size;
+}
