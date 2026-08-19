@@ -51,4 +51,5 @@
   -webkit-text-fill-color: transparent;
 
   will-change: background-size;
+  white-space: nowrap;
 }

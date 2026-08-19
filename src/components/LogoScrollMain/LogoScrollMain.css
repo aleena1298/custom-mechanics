@@ -1,0 +1,66 @@
+.logo-scroll-main {
+  position: relative;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 4;
+  width: 100%;
+  padding: 4rem 1rem;
+  box-sizing: border-box;
+}
+
+.logo-scroll-text h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  margin: 0 0 2rem;
+  color: #fff;
+}
+
+.logo-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.logo-scroll-logo {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  will-change: transform;
+  padding: 1rem 0;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.logo-item img {
+  height: 5rem;
+  width: auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.logo-item img:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+  .logo-item img {
+    height: 3.5rem;
+  }
+
+  .logo-scroll-logo {
+    gap: 1.5rem;
+  }
+}

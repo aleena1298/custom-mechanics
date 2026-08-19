@@ -1,0 +1,69 @@
+.wa-float-btn {
+  position: fixed;
+
+  bottom: 30px;
+  right: 30px;
+
+  width: 60px;
+  height: 60px;
+
+  background-color: #25d366;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  z-index: 9999;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wa-icon {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+.wa-float-btn:hover {
+  transform: scale(1.1);
+
+  background-color: #1ebc57 !important;
+}
+
+.wa-float-btn::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #25d366;
+
+  border-radius: 50%;
+
+  z-index: -1;
+
+  animation: wa-pulse 2s infinite;
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}

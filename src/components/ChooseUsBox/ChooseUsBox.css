@@ -1,0 +1,53 @@
+.choose-us-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding-top: 7rem;
+  background-color: #000;
+  color: #fff;
+}
+
+
+.choose-us-box h2,
+.choose-us-box p {
+  font-family: sans-serif;
+  margin-bottom: 1rem;
+}
+
+.choose-head h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 8rem);
+}
+
+.choose-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 2rem;
+}
+
+.choose-card {
+  max-width: 20rem;
+  background-color: #171717;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin: 1rem;
+}
+
+.choose-card:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .choose-card {
+    text-align: center;
+    margin: 0.5rem;
+  }
+}
