@@ -1,0 +1,92 @@
+:root {
+  --yellow: #CFA005;
+}
+
+.marketplace-slider {
+  width: 100%;
+  background-color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marketplace-slider-inside {
+  width: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marketplace-swiper {
+  width: 100%;
+}
+
+.marketplace-slide {
+  width: 100%;
+  height: 35rem;
+
+  border-radius: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketplace-slide-inside {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.marketplace-slide img {
+  width: 100%;
+  height: 35rem;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  transition: all 0.2s ease-in;
+}
+
+.marketplace-slide:hover img {
+  opacity: 0.5;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.marketplace-slide-inside h1 {
+  position: absolute;
+  color: #bebebe;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 20px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--yellow);
+}
+
+@media (max-width: 1000px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--yellow);
+    font-size: 20px;
+    display: none;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    color: var(--yellow);
+    display: none;
+  }
+}
