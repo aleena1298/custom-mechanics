@@ -66,7 +66,7 @@ export default function Navbar() {
                   Brake Repair
                 </a>
 
-                <a href="/carburetor-service" className="dropdown-link">
+                <a href="/carburetorandoil" className="dropdown-link">
                   Carburetor Cleaning & Oil change
                 </a>
 
@@ -168,7 +168,7 @@ export default function Navbar() {
                   Carburetor Cleaning & Oil change
                 </a>
 
-                <a href="/engine-repair" className="dropdown-link">
+                <a href="/enginerepair" className="dropdown-link">
                   Engine Repair
                 </a>
 

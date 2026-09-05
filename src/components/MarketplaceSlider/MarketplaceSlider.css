@@ -1,92 +1,203 @@
-:root {
-  --yellow: #CFA005;
+/* MarketplaceBike.css */
+
+/* =========================================================
+   SHARED
+========================================================= */
+
+.marketplace-bike {
+  display: flex;
+  width: 100%;
+  padding: 5rem;
+  height: auto;
+  align-items: center;
+  margin: auto;
 }
 
-.marketplace-slider {
-  width: 100%;
-  background-color: #000;
-
+.marketplace-bike-text {
   display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: #fff;
   justify-content: center;
+  padding: 2rem;
+}
+
+.marketplace-bike-image {
+  flex: 1;
+  height: auto;
+}
+
+.marketplace-bike-para {
+  width: 100%;
+}
+
+.marketplace-bike-para p {
+  font-size: clamp(1rem, calc(1vw + 0.5rem), 1.125rem);
+}
+
+.marketplace-bike-brand {
+  margin-bottom: -1rem;
+}
+
+.marketplace-bike-brand span {
+  font-weight: lighter;
+  font-family: Michroma, sans-serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+.marketplace-bike-model span {
+  font-family: Inter, sans-serif;
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  color: #ff1515;
+  margin-bottom: 4rem;
+}
+
+.marketplace-bike-image img {
+  width: 100%;
+  height: auto;
+}
+
+.marketplace-bike-buttons {
+  display: flex;
+  width: 100%;
   align-items: center;
 }
 
-.marketplace-slider-inside {
-  width: 90%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.marketplace-bike-primary,
+.marketplace-bike-secondary {
+  font-family: sans-serif;
+  padding: 1rem 4rem;
+  margin-right: 2rem;
 }
 
-.marketplace-swiper {
-  width: 100%;
-}
-
-.marketplace-slide {
-  width: 100%;
-  height: 35rem;
-
-  border-radius: 50px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.marketplace-slide-inside {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.marketplace-slide img {
-  width: 100%;
-  height: 35rem;
-
-  object-fit: cover;
-
-  border-radius: 20px;
-
-  transition: all 0.2s ease-in;
-}
-
-.marketplace-slide:hover img {
-  opacity: 0.5;
-  transform: scale(1.01);
+.marketplace-bike-primary:hover,
+.marketplace-bike-secondary:hover {
   cursor: pointer;
 }
 
-.marketplace-slide-inside h1 {
-  position: absolute;
-  color: #bebebe;
+.marketplace-bike-primary {
+  background-color: #ff1414;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: #fff;
-  font-size: 20px;
+.marketplace-bike-secondary {
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: var(--yellow);
+
+/* =========================================================
+   STANDARD
+   Original _182yl_
+========================================================= */
+
+.marketplace-bike--standard {
+  background-color: #000;
 }
 
-@media (max-width: 1000px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: var(--yellow);
-    font-size: 20px;
-    display: none;
+
+/* =========================================================
+   PARALLAX
+   Original _odapg_
+========================================================= */
+
+.marketplace-bike--parallax {
+  background-color: #121212;
+}
+
+.marketplace-bike--parallax .marketplace-bike-brand {
+  margin-left: -2rem;
+}
+
+.marketplace-bike-parallax-image {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================================
+   1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+  .marketplace-bike-brand {
+    margin-bottom: 0;
+  }
+}
+
+
+/* =========================================================
+   STANDARD MOBILE
+   Original 182yl breakpoint
+========================================================= */
+
+@media (max-width: 1100px) {
+  .marketplace-bike--standard {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
   }
 
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    color: var(--yellow);
-    display: none;
+  .marketplace-bike--standard .marketplace-bike-buttons {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .marketplace-bike--standard .marketplace-bike-primary,
+  .marketplace-bike--standard .marketplace-bike-secondary {
+    margin-right: 0;
+  }
+
+  .marketplace-bike--standard .marketplace-bike-primary {
+    margin-bottom: 1rem;
+  }
+
+  .marketplace-bike--standard .marketplace-bike-image img {
+    width: 90%;
+  }
+}
+
+
+/* =========================================================
+   PARALLAX MOBILE
+   Original odapg breakpoint
+========================================================= */
+
+@media (max-width: 1100px) {
+  .marketplace-bike--parallax {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .marketplace-bike--parallax .marketplace-bike-brand {
+    margin-left: 0;
+  }
+
+  .marketplace-bike--parallax .marketplace-bike-buttons {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .marketplace-bike--parallax .marketplace-bike-primary,
+  .marketplace-bike--parallax .marketplace-bike-secondary {
+    margin-right: 0;
+  }
+
+  .marketplace-bike--parallax .marketplace-bike-primary {
+    margin-bottom: 1rem;
+  }
+
+  .marketplace-bike--parallax .marketplace-bike-image img {
+    width: 90%;
   }
 }

@@ -17,7 +17,13 @@ export default function Home() {
       <Navbar />
 
       <Hero />
-      <TextMain />
+      <TextMain
+        line1="FAST-TRACK YOUR"
+        line2="TCD TESTING"
+        line3="AND RENEWAL"
+        line4="WITH CUSTOM"
+        line5="MECHANICS"
+      />
       <MainServiceBox />
       <LogoScrollMain />
       <VideoBox />

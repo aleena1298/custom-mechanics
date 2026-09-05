@@ -1,0 +1,32 @@
+import { useNavigate } from "react-router-dom";
+import "./ServiceCard.css";
+
+export default function ServiceCard({
+  heading,
+  para,
+  image,
+  btn,
+}) {
+  const navigate = useNavigate();
+
+  return (
+    <div className="service-card">
+      <div className="service-card-text">
+        <h1>{heading}</h1>
+
+        <p>{para}</p>
+
+        <button
+          className="service-card-btn"
+          onClick={() => navigate("/booknow")}
+        >
+          {btn}
+        </button>
+      </div>
+
+      <div className="service-card-img">
+        <img src={image} alt="" />
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+
+/* =========================================
+   ORIGINAL: _container_16vpw_1
+========================================= */
+
+.animated-video-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+
+/* =========================================
+   ORIGINAL: _bgVideo_16vpw_35
+========================================= */
+
+.animated-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   ORIGINAL: _contentOverlay_16vpw_55
+========================================= */
+
+.animated-video-overlay {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  height: 100%;
+}
+
+
+/* =========================================
+   Production has:
+   * { font-family: Bebas Neue, sans-serif; }
+
+   We scope it here so it doesn't destroy
+   the rest of your React application.
+========================================= */
+
+.animated-video-container,
+.animated-video-container * {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+
+/* =========================================
+   ORIGINAL: _textmain_1mwp7_11
+========================================= */
+
+.animated-video-textmain {
+  min-height: 200vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 6rem 1rem;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   ORIGINAL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .animated-video-textmain {
+    min-height: 120vh;
+  }
+}
+
+
+/* =========================================
+   ORIGINAL: _heading_1mwp7_45
+========================================= */
+
+.animated-video-heading {
+  font-family: "Bebas Neue", sans-serif;
+
+  text-align: center;
+
+  line-height: 0.85;
+}
+
+
+/* =========================================
+   ORIGINAL: _line_1mwp7_61
+========================================= */
+
+.animated-video-line {
+  display: block;
+
+  font-size: clamp(2.2rem, 24vw, 15rem);
+
+  color: transparent;
+
+  -webkit-text-stroke: 0.2px #ffffff;
+  text-stroke: 0.2px #ffffff;
+
+  background-image: linear-gradient(
+    90deg,
+    #fff 0% 100%
+  );
+
+  background-repeat: no-repeat;
+
+  background-position: left center;
+
+  background-size: 0% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  will-change: background-size;
+}

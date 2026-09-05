@@ -1,22 +1,40 @@
-/* MarketplaceBike.css */
-
-/* =========================
-   MAIN SECTION
-========================= */
+/* ========================================
+   MARKETPLACE BIKE
+======================================== */
 
 .marketplace-bike {
   display: flex;
   width: 100%;
   padding: 5rem;
   height: auto;
-  background-color: #000;
   align-items: center;
   margin: auto;
 }
 
-/* =========================
-   TEXT SECTION
-========================= */
+
+/* ========================================
+   STANDARD VARIANT
+   Original: _maindiv_182yl_5
+======================================== */
+
+.marketplace-bike--standard {
+  background-color: #000;
+}
+
+
+/* ========================================
+   PARALLAX VARIANT
+   Original: _maindiv_odapg_5
+======================================== */
+
+.marketplace-bike--parallax {
+  background-color: #121212;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
 
 .marketplace-bike-text {
   display: flex;
@@ -27,9 +45,46 @@
   padding: 2rem;
 }
 
-/* =========================
+
+/* ========================================
+   BRAND
+   Yamaha / Honda
+======================================== */
+
+.marketplace-bike-brand {
+  margin-bottom: -1rem;
+}
+
+.marketplace-bike-brand span {
+  font-weight: lighter;
+  font-family: Michroma, sans-serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+
+/*
+  Original odapg difference
+*/
+.marketplace-bike--parallax .marketplace-bike-brand {
+  margin-left: -2rem;
+}
+
+
+/* ========================================
+   MODEL
+======================================== */
+
+.marketplace-bike-model span {
+  font-family: Inter, sans-serif;
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  color: #ff1515;
+  margin-bottom: 4rem;
+}
+
+
+/* ========================================
    PARAGRAPH
-========================= */
+======================================== */
 
 .marketplace-bike-para {
   width: 100%;
@@ -41,47 +96,26 @@
   margin-bottom: 1rem;
 }
 
-/* =========================
-   YAMAHA
-========================= */
 
-.marketplace-bike-brand {
-  margin-bottom: -1rem;
-}
-
-.marketplace-bike-brand span {
-  font-family: "Michroma", sans-serif;
-  font-weight: lighter;
-  font-size: clamp(3rem, 7vw, 7rem);
-}
-
-/* Original production breakpoint */
-@media (max-width: 1200px) {
-  .marketplace-bike-brand {
-    margin-bottom: 0;
-  }
-}
-
-/* =========================
-   AEROX YECVT
-========================= */
-
-.marketplace-bike-model span {
-  font-family: "Inter", sans-serif;
-  font-size: clamp(3.5rem, 5vw, 5rem);
-  color: #ff1515;
-  margin-bottom: 4rem;
-}
-
-/* =========================
+/* ========================================
    IMAGE
-========================= */
+======================================== */
 
 /*
-  This is the INNER image container.
+  Do NOT add flex: 1 here.
 
+  The production outer "imagesection"
+  did not have a generated CSS-module rule.
+*/
+.marketplace-bike-image-section {
+  position: relative;
+}
+
+
+/*
   Original:
-  ._image_182yl_53
+  _image_182yl_53
+  _image_odapg_53
 */
 .marketplace-bike-image {
   flex: 1;
@@ -93,20 +127,10 @@
   height: auto;
 }
 
-/*
-  IMPORTANT:
-  Do NOT put flex: 1 here.
 
-  The original outer "imagesection"
-  wrapper does not have that CSS.
-*/
-.marketplace-bike-image-section {
-  /* intentionally empty */
-}
-
-/* =========================
-   BUTTON BOX
-========================= */
+/* ========================================
+   BUTTON CONTAINER
+======================================== */
 
 .marketplace-bike-buttons {
   display: flex;
@@ -114,39 +138,58 @@
   align-items: center;
 }
 
-/* =========================
+
+/* ========================================
    BUTTONS
-========================= */
+======================================== */
 
 .marketplace-bike-primary,
 .marketplace-bike-secondary {
   font-family: sans-serif;
   padding: 1rem 4rem;
   margin-right: 2rem;
-}
-
-.marketplace-bike-primary:hover,
-.marketplace-bike-secondary:hover {
+  color: #fff;
   cursor: pointer;
 }
 
+
+/* Purchase */
 .marketplace-bike-primary {
   background-color: #ff1414;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
+
+/* Buy Accessories */
 .marketplace-bike-secondary {
-  border: 1px solid white;
+  background-color: transparent;
+  border: 1px solid #fff;
   border-radius: 5px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
+/* ========================================
+   1200px
+======================================== */
+
+@media (max-width: 1200px) {
+  .marketplace-bike-brand {
+    margin-bottom: 0;
+  }
+}
+
+
+/* ========================================
+   1100px
+======================================== */
 
 @media (max-width: 1100px) {
-  .marketplace-bike {
+  /*
+    Original standard component:
+    flex-wrap: wrap
+  */
+  .marketplace-bike--standard {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -154,20 +197,42 @@
     padding: 0;
   }
 
+
+  /*
+    Original parallax component:
+    flex-wrap: wrap-reverse
+  */
+  .marketplace-bike--parallax {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+
+  .marketplace-bike--parallax .marketplace-bike-brand {
+    margin-left: 0;
+  }
+
+
   .marketplace-bike-buttons {
     flex-direction: column;
     justify-content: center;
     width: 100%;
   }
 
+
   .marketplace-bike-primary,
   .marketplace-bike-secondary {
     margin-right: 0;
   }
 
+
   .marketplace-bike-primary {
     margin-bottom: 1rem;
   }
+
 
   .marketplace-bike-image img {
     width: 90%;
