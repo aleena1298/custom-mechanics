@@ -101,9 +101,7 @@ export default function BookingSection() {
       });
 
       gsap.from(
-        formCardRef.current.querySelectorAll(
-          "input, textarea, button"
-        ),
+        formCardRef.current.querySelectorAll("input, textarea, button"),
         {
           opacity: 1,
           duration: 0.8,
@@ -115,7 +113,7 @@ export default function BookingSection() {
             start: "top 95%",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       ScrollTrigger.refresh(true);
@@ -186,7 +184,7 @@ export default function BookingSection() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       const result = await response.json();
@@ -215,42 +213,21 @@ export default function BookingSection() {
   };
 
   return (
-    <section
-      className="booking-section"
-      ref={sectionRef}
-    >
+    <section className="booking-section" ref={sectionRef} id="book-now">
       <div className="booking-content-grid">
-
         <div className="booking-title-container">
-          <h1
-            className="booking-title"
-            ref={titleRef}
-          >
-            <span className="booking-title-book">
-              BOOK
-            </span>
+          <h1 className="booking-title" ref={titleRef}>
+            <span className="booking-title-book">BOOK</span>
 
-            <span className="booking-title-now">
-              NOW
-            </span>
+            <span className="booking-title-now">NOW</span>
           </h1>
         </div>
 
-        <div
-          className="booking-form-card"
-          ref={formCardRef}
-        >
+        <div className="booking-form-card" ref={formCardRef}>
           <form onSubmit={handleSubmit}>
-
             {fields.map((field) => (
-              <div
-                className="booking-form-field"
-                key={field.name}
-              >
-                <label
-                  htmlFor={field.name}
-                  className="booking-form-label"
-                >
+              <div className="booking-form-field" key={field.name}>
+                <label htmlFor={field.name} className="booking-form-label">
                   {field.label}
                 </label>
 
@@ -262,12 +239,8 @@ export default function BookingSection() {
                     placeholder={field.placeholder}
                     value={formData[field.name]}
                     onChange={handleChange}
-                    onFocus={(event) =>
-                      handleInputFocus(event.currentTarget)
-                    }
-                    onBlur={(event) =>
-                      handleInputBlur(event.currentTarget)
-                    }
+                    onFocus={(event) => handleInputFocus(event.currentTarget)}
+                    onBlur={(event) => handleInputBlur(event.currentTarget)}
                     className="booking-form-input"
                     required
                   />
@@ -276,10 +249,7 @@ export default function BookingSection() {
             ))}
 
             <div className="booking-form-field">
-              <label
-                htmlFor="dateTime"
-                className="booking-form-label"
-              >
+              <label htmlFor="dateTime" className="booking-form-label">
                 Preferred date &amp; time
               </label>
 
@@ -290,26 +260,17 @@ export default function BookingSection() {
                   name="dateTime"
                   value={formData.dateTime}
                   onChange={handleChange}
-                  onFocus={(event) =>
-                    handleInputFocus(event.currentTarget)
-                  }
-                  onBlur={(event) =>
-                    handleInputBlur(event.currentTarget)
-                  }
+                  onFocus={(event) => handleInputFocus(event.currentTarget)}
+                  onBlur={(event) => handleInputBlur(event.currentTarget)}
                   className="booking-form-input"
                   required
-                  min={new Date()
-                    .toISOString()
-                    .slice(0, 16)}
+                  min={new Date().toISOString().slice(0, 16)}
                 />
               </div>
             </div>
 
             <div className="booking-form-field">
-              <label
-                htmlFor="description"
-                className="booking-form-label"
-              >
+              <label htmlFor="description" className="booking-form-label">
                 Description
               </label>
 
@@ -320,12 +281,8 @@ export default function BookingSection() {
                   placeholder="Description of what actually you want"
                   value={formData.description}
                   onChange={handleChange}
-                  onFocus={(event) =>
-                    handleInputFocus(event.currentTarget)
-                  }
-                  onBlur={(event) =>
-                    handleInputBlur(event.currentTarget)
-                  }
+                  onFocus={(event) => handleInputFocus(event.currentTarget)}
+                  onBlur={(event) => handleInputBlur(event.currentTarget)}
                   className="booking-form-textarea"
                   rows="3"
                   required
@@ -339,25 +296,19 @@ export default function BookingSection() {
               disabled={isSending}
               onMouseEnter={(event) => {
                 if (!isSending) {
-                  handleButtonEnter(
-                    event.currentTarget
-                  );
+                  handleButtonEnter(event.currentTarget);
                 }
               }}
               onMouseLeave={(event) => {
                 if (!isSending) {
-                  handleButtonLeave(
-                    event.currentTarget
-                  );
+                  handleButtonLeave(event.currentTarget);
                 }
               }}
             >
               {isSending ? "Sending..." : "Submit"}
             </button>
-
           </form>
         </div>
-
       </div>
     </section>
   );

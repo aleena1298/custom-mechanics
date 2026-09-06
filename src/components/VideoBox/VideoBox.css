@@ -67,11 +67,14 @@
 }
 
 .certified h2 {
+  font-family: "Bebas Neue", sans-serif;
   font-size: 2rem;
+  line-height: 1.8;
   margin-bottom: 1rem;
 }
 
 .certified p {
+  font-family: Arial, Helvetica;
   font-size: 1rem;
   line-height: 1.5;
 }

@@ -7,22 +7,16 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-
         {/* Logo */}
         <div className="logo-wrapper">
           <a href="/" className="logo-link">
-            <img
-              src={logo}
-              alt="Custom Mechanics Logo"
-              className="logo-img"
-            />
+            <img src={logo} alt="Custom Mechanics Logo" className="logo-img" />
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <div className="desktop-nav">
           <div className="nav-links nav-links-desktop">
-
             <a href="/" className="nav-link">
               Home
             </a>
@@ -38,7 +32,6 @@ export default function Navbar() {
             <div className="services-container">
               <button className="nav-link">
                 Services
-
                 <svg
                   className="chevron"
                   viewBox="0 0 20 20"
@@ -81,7 +74,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a href="/book-now" className="book-now-button">
+          <a href="#book-now" className="book-now-button">
             Book Now
           </a>
         </div>
@@ -94,13 +87,7 @@ export default function Navbar() {
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
           >
-
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
                 d="M4 6H20M4 12H20M4 18H20"
                 stroke="currentColor"
@@ -110,16 +97,14 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-
       </div>
 
       {/* Mobile Navigation */}
       <div
-  className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
-  id="mobile-menu">
-    
+        className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
+        id="mobile-menu"
+      >
         <div className="mobile-menu-content">
-
           <div className="nav-links nav-links-mobile">
             <a href="/" className="nav-link">
               Home
@@ -136,7 +121,6 @@ export default function Navbar() {
             <div className="services-container">
               <button className="nav-link">
                 Services
-
                 <svg
                   className="chevron"
                   viewBox="0 0 20 20"
@@ -179,13 +163,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a
-            href="/book-now"
-            className="book-now-button book-now-mobile"
-          >
+          <a href="#book-now" className="book-now-button book-now-mobile">
             Book Now
           </a>
-
         </div>
       </div>
     </nav>

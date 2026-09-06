@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./VideoBox.css";
-
+import bikeAnimation from "../../assets/videos/bike animation.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function VideoBox() {
@@ -13,13 +13,11 @@ export default function VideoBox() {
   const cards = [
     {
       title: "Certified",
-      text:
-        "Our workshop technicians are factory trained to undertake all service requirements having attended Ducati, Aprilia and Moto Guzzi factory courses.",
+      text: "Our workshop technicians are factory trained to undertake all service requirements having attended Ducati, Aprilia and Moto Guzzi factory courses.",
     },
     {
       title: "Insurance Work",
-      text:
-        "Had a bump? Need an insurance quote? Our workshop caters for all insurance repairs, technical, welding and bodywork for all bikes.",
+      text: "Had a bump? Need an insurance quote? Our workshop caters for all insurance repairs, technical, welding and bodywork for all bikes.",
     },
   ];
 
@@ -57,7 +55,7 @@ export default function VideoBox() {
               trigger: card,
               start: "top 85%",
             },
-          }
+          },
         );
       });
     }, sectionRef);
@@ -94,17 +92,8 @@ export default function VideoBox() {
   };
 
   return (
-    <div
-      className="video-box"
-      ref={sectionRef}
-    >
-      <video
-        className="video-bg"
-        autoPlay
-        loop
-        muted
-        src="/bike animation.mp4"
-      />
+    <div className="video-box" ref={sectionRef}>
+      <video className="video-bg" autoPlay loop muted src={bikeAnimation} />
 
       <div className="main-certified-box">
         {cards.map((card, index) => (
@@ -114,12 +103,8 @@ export default function VideoBox() {
               cardRefs.current[index] = element;
             }}
             className="certified"
-            onMouseEnter={() =>
-              handleMouseEnter(cardRefs.current[index])
-            }
-            onMouseLeave={() =>
-              handleMouseLeave(cardRefs.current[index])
-            }
+            onMouseEnter={() => handleMouseEnter(cardRefs.current[index])}
+            onMouseLeave={() => handleMouseLeave(cardRefs.current[index])}
           >
             <h2>{card.title}</h2>
             <p>{card.text}</p>
