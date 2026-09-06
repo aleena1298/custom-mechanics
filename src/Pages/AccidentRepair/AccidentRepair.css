@@ -1,0 +1,30 @@
+.accident-sparehead {
+  width: 100%;
+  height: auto;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  z-index: 999;
+}
+
+.accident-sparehead h1 {
+  z-index: 5;
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.accident-spareparts {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  top: -3rem;
+  margin-bottom: -3rem;
+  padding: 2rem;
+  background-color: #000;
+  margin-top: 2rem;
+}

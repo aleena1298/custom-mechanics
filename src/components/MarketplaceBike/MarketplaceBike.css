@@ -1,42 +1,14 @@
-/* ========================================
-   MARKETPLACE BIKE
-======================================== */
-
-.marketplace-bike {
+.bike-parallax-main {
   display: flex;
   width: 100%;
   padding: 5rem;
   height: auto;
+  background-color: #121212;
   align-items: center;
   margin: auto;
 }
 
-
-/* ========================================
-   STANDARD VARIANT
-   Original: _maindiv_182yl_5
-======================================== */
-
-.marketplace-bike--standard {
-  background-color: #000;
-}
-
-
-/* ========================================
-   PARALLAX VARIANT
-   Original: _maindiv_odapg_5
-======================================== */
-
-.marketplace-bike--parallax {
-  background-color: #121212;
-}
-
-
-/* ========================================
-   TEXT
-======================================== */
-
-.marketplace-bike-text {
+.bike-parallax-text {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -45,164 +17,81 @@
   padding: 2rem;
 }
 
-
-/* ========================================
-   BRAND
-   Yamaha / Honda
-======================================== */
-
-.marketplace-bike-brand {
-  margin-bottom: -1rem;
+.bike-parallax-image {
+  flex: 1;
+  height: auto;
 }
 
-.marketplace-bike-brand span {
-  font-weight: lighter;
-  font-family: Michroma, sans-serif;
-  font-size: clamp(3rem, 7vw, 7rem);
-}
-
-
-/*
-  Original odapg difference
-*/
-.marketplace-bike--parallax .marketplace-bike-brand {
-  margin-left: -2rem;
-}
-
-
-/* ========================================
-   MODEL
-======================================== */
-
-.marketplace-bike-model span {
-  font-family: Inter, sans-serif;
-  font-size: clamp(3.5rem, 5vw, 5rem);
-  color: #ff1515;
-  margin-bottom: 4rem;
-}
-
-
-/* ========================================
-   PARAGRAPH
-======================================== */
-
-.marketplace-bike-para {
+.bike-parallax-para {
   width: 100%;
 }
 
-.marketplace-bike-para p {
+.bike-parallax-para p {
   font-family: sans-serif;
   font-size: clamp(1rem, calc(1vw + 0.5rem), 1.125rem);
   margin-bottom: 1rem;
 }
 
-
-/* ========================================
-   IMAGE
-======================================== */
-
-/*
-  Do NOT add flex: 1 here.
-
-  The production outer "imagesection"
-  did not have a generated CSS-module rule.
-*/
-.marketplace-bike-image-section {
-  position: relative;
+.bike-parallax-custom {
+  margin-bottom: -1rem;
+  margin-left: -2rem;
 }
 
-
-/*
-  Original:
-  _image_182yl_53
-  _image_odapg_53
-*/
-.marketplace-bike-image {
-  flex: 1;
-  height: auto;
+@media (max-width: 1200px) {
+  .bike-parallax-custom {
+    margin-bottom: 0rem;
+  }
 }
 
-.marketplace-bike-image img {
+.bike-parallax-custom span {
+  font-weight: lighter;
+  font-family: Michroma;
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+.bike-parallax-mechanics span {
+  font-family: Inter;
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  color: #ff1515;
+  margin-bottom: 4rem;
+}
+
+.bike-parallax-image img {
   width: 100%;
   height: auto;
 }
 
-
-/* ========================================
-   BUTTON CONTAINER
-======================================== */
-
-.marketplace-bike-buttons {
+.bike-parallax-btnbox {
   display: flex;
   width: 100%;
   align-items: center;
 }
 
-
-/* ========================================
-   BUTTONS
-======================================== */
-
-.marketplace-bike-primary,
-.marketplace-bike-secondary {
+.bike-parallax-btnactive,
+.bike-parallax-btnsecondary {
   font-family: sans-serif;
   padding: 1rem 4rem;
   margin-right: 2rem;
-  color: #fff;
+}
+
+.bike-parallax-btnactive:hover,
+.bike-parallax-btnsecondary:hover {
   cursor: pointer;
 }
 
-
-/* Purchase */
-.marketplace-bike-primary {
+.bike-parallax-btnactive {
   background-color: #ff1414;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-
-/* Buy Accessories */
-.marketplace-bike-secondary {
-  background-color: transparent;
-  border: 1px solid #fff;
+.bike-parallax-btnsecondary {
+  border: 1px solid white;
   border-radius: 5px;
 }
 
-
-/* ========================================
-   1200px
-======================================== */
-
-@media (max-width: 1200px) {
-  .marketplace-bike-brand {
-    margin-bottom: 0;
-  }
-}
-
-
-/* ========================================
-   1100px
-======================================== */
-
 @media (max-width: 1100px) {
-  /*
-    Original standard component:
-    flex-wrap: wrap
-  */
-  .marketplace-bike--standard {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-  }
-
-
-  /*
-    Original parallax component:
-    flex-wrap: wrap-reverse
-  */
-  .marketplace-bike--parallax {
+  .bike-parallax-main {
     flex-wrap: wrap-reverse;
     justify-content: center;
     align-items: center;
@@ -210,31 +99,146 @@
     padding: 0;
   }
 
-
-  .marketplace-bike--parallax .marketplace-bike-brand {
-    margin-left: 0;
+  .bike-parallax-custom {
+    margin-left: 0rem;
   }
 
-
-  .marketplace-bike-buttons {
+  .bike-parallax-btnbox {
     flex-direction: column;
     justify-content: center;
     width: 100%;
   }
 
-
-  .marketplace-bike-primary,
-  .marketplace-bike-secondary {
-    margin-right: 0;
+  .bike-parallax-btnactive,
+  .bike-parallax-btnsecondary {
+    margin-right: 0rem;
   }
 
-
-  .marketplace-bike-primary {
+  .bike-parallax-btnactive {
     margin-bottom: 1rem;
   }
 
+  .bike-parallax-image img {
+    width: 90%;
+  }
+}
 
-  .marketplace-bike-image img {
+.standard-bike-main {
+  display: flex;
+  width: 100%;
+  padding: 5rem;
+  height: auto;
+  background-color: #000;
+  align-items: center;
+  margin: auto;
+}
+
+.standard-bike-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: #fff;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.standard-bike-image {
+  flex: 1;
+  height: auto;
+}
+
+.standard-bike-para {
+  width: 100%;
+}
+
+.standard-bike-para p {
+  font-family: sans-serif;
+  font-size: clamp(1rem, calc(1vw + 0.5rem), 1.125rem);
+  margin-bottom: 1rem;
+}
+
+.standard-bike-custom {
+  margin-bottom: -1rem;
+}
+
+@media (max-width: 1200px) {
+  .standard-bike-custom {
+    margin-bottom: 0;
+  }
+}
+
+.standard-bike-custom span {
+  font-weight: lighter;
+  font-family: Michroma;
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+.standard-bike-mechanics span {
+  font-family: Inter;
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  color: #ff1515;
+  margin-bottom: 4rem;
+}
+
+.standard-bike-image img {
+  width: 100%;
+  height: auto;
+}
+
+.standard-bike-btnbox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.standard-bike-btnactive,
+.standard-bike-btnsecondary {
+  font-family: sans-serif;
+  padding: 1rem 4rem;
+  margin-right: 2rem;
+}
+
+.standard-bike-btnactive:hover,
+.standard-bike-btnsecondary:hover {
+  cursor: pointer;
+}
+
+.standard-bike-btnactive {
+  background-color: #ff1414;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.standard-bike-btnsecondary {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+@media (max-width: 1100px) {
+  .standard-bike-main {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .standard-bike-btnbox {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .standard-bike-btnactive,
+  .standard-bike-btnsecondary {
+    margin-right: 0;
+  }
+
+  .standard-bike-btnactive {
+    margin-bottom: 1rem;
+  }
+
+  .standard-bike-image img {
     width: 90%;
   }
 }

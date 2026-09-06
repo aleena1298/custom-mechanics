@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AnimatedVideoText({
   video,
+  img,
   lines = [],
 }) {
   const sectionRef = useRef(null);
@@ -44,14 +45,22 @@ export default function AnimatedVideoText({
 
   return (
     <div className="animated-video-container">
-      <video
-        className="animated-video-bg"
-        src={video}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      {video ? (
+        <video
+          className="animated-video-bg"
+          src={video}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      ) : (
+        <img
+          className="animated-video-bg"
+          src={img}
+          alt=""
+        />
+      )}
 
       <div className="animated-video-overlay">
         <div

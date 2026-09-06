@@ -7,7 +7,7 @@ import TCDTesting from "./Pages/TCDTesting/TCDTesting.jsx";
 import AccidentRepair from "./Pages/AccidentRepair/AccidentRepair.jsx";
 import BikeAndBatteryReplacement from "./Pages/BikeAndBatteryReplacement/BikeAndBatteryReplacement.jsx";
 import BrakeRepair from "./Pages/BrakeRepair/BrakeRepair.jsx";
-import CarbeuratorAndOil from "./Pages/CarbeuratorAndOil/CarbeuratorAndOil.jsx";
+import CarbeuretorAndOil from "./Pages/CarbeuretorAndOil/CarbeuretorAndOil.jsx";
 import EngineRepair from "./Pages/EngineRepair/EngineRepair.jsx";
 function App() {
   return (
@@ -35,23 +35,23 @@ function App() {
         />
 
         <Route
-          path="/accident-repair"
+          path="/accidentrepair"
           element={<AccidentRepair />}
         />
 
         <Route 
-        path="/battery-replacement"
+        path="/batteryreplacement"
         element={<BikeAndBatteryReplacement />}
         />
 
         <Route
-          path="/brake-repair"
+          path="/brakerepair"
           element={<BrakeRepair />}
         />
 
         <Route
           path="/carburetorandoil"
-          element={<CarbeuratorAndOil />}
+          element={<CarbeuretorAndOil />}
         />
 
         <Route 

@@ -54,15 +54,15 @@ export default function Navbar() {
               </button>
 
               <div className="services-dropdown">
-                <a href="/accident-repair" className="dropdown-link">
+                <a href="/accidentrepair" className="dropdown-link">
                   Accident Repair
                 </a>
 
-                <a href="/battery-replacement" className="dropdown-link">
+                <a href="/batteryreplacement" className="dropdown-link">
                   Bike Battery Replacement
                 </a>
 
-                <a href="/brake-repair" className="dropdown-link">
+                <a href="/brakerepair" className="dropdown-link">
                   Brake Repair
                 </a>
 
@@ -70,7 +70,7 @@ export default function Navbar() {
                   Carburetor Cleaning & Oil change
                 </a>
 
-                <a href="/engine-repair" className="dropdown-link">
+                <a href="/enginerepair" className="dropdown-link">
                   Engine Repair
                 </a>
 
@@ -152,19 +152,19 @@ export default function Navbar() {
               </button>
 
               <div className="services-dropdown">
-                <a href="/accident-repair" className="dropdown-link">
+                <a href="/accidentrepair" className="dropdown-link">
                   Accident Repair
                 </a>
 
-                <a href="/battery-replacement" className="dropdown-link">
+                <a href="/batteryreplacement" className="dropdown-link">
                   Bike Battery Replacement
                 </a>
 
-                <a href="/brake-repair" className="dropdown-link">
+                <a href="/brakerepair" className="dropdown-link">
                   Brake Repair
                 </a>
 
-                <a href="/carburetor-service" className="dropdown-link">
+                <a href="/carburetorservice" className="dropdown-link">
                   Carburetor Cleaning & Oil change
                 </a>
 

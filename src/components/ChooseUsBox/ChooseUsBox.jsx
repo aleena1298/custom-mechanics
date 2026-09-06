@@ -6,22 +6,11 @@ import "./ChooseUsBox.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ChooseUsBox() {
+export default function ChooseUsBox({
+  title = "Why Choose Us",
+  items = [],
+}) {
   const sectionRef = useRef(null);
-
-  const services = [
-    "Motorcycle Repair",
-    "Engine Diagnostics",
-    "Spare Parts",
-    "Motorbike Upgrade",
-    "Repaint",
-    "Motorbike Restore",
-    "TCD Testing",
-    "Pickup/Drop off",
-  ];
-
-  const description =
-    "Our workshop technicians are factory trained to undertake all your repair and service requirements having attended Ducati, Aprilia and Moto Guzzi factory courses.";
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -43,8 +32,7 @@ export default function ChooseUsBox() {
       gsap.utils.toArray(".choose-card").forEach((card) => {
         const scaleAnimation = gsap.to(card, {
           scale: 1.05,
-          boxShadow:
-            "0px 10px 25px rgba(255,40,40,0.25)",
+          boxShadow: "0px 10px 25px rgba(255,40,40,0.25)",
           borderColor: "rgb(255,40,40)",
           duration: 0.4,
           ease: "power2.out",
@@ -96,31 +84,30 @@ export default function ChooseUsBox() {
         const handleMouseLeave = () => {
           scaleAnimation.reverse();
           backgroundAnimation.reverse();
-
           resetRotation();
         };
 
-        card.addEventListener(
-          "mouseenter",
-          handleMouseEnter
-        );
+        card.addEventListener("mouseenter", handleMouseEnter);
+        card.addEventListener("mousemove", handleMouseMove);
+        card.addEventListener("mouseleave", handleMouseLeave);
 
-        card.addEventListener(
-          "mousemove",
-          handleMouseMove
-        );
-
-        card.addEventListener(
-          "mouseleave",
-          handleMouseLeave
-        );
+        // Make GSAP context aware of cleanup
+        card._chooseCleanup = () => {
+          card.removeEventListener("mouseenter", handleMouseEnter);
+          card.removeEventListener("mousemove", handleMouseMove);
+          card.removeEventListener("mouseleave", handleMouseLeave);
+        };
       });
     }, sectionRef);
 
     return () => {
+      sectionRef.current
+        ?.querySelectorAll(".choose-card")
+        .forEach((card) => card._chooseCleanup?.());
+
       ctx.revert();
     };
-  }, []);
+  }, [items]);
 
   return (
     <section
@@ -128,18 +115,17 @@ export default function ChooseUsBox() {
       ref={sectionRef}
     >
       <div className="choose-head">
-        <h1>Why Choose Us</h1>
+        <h1>{title}</h1>
       </div>
 
       <div className="choose-grid">
-        {services.map((service) => (
+        {items.map((item, index) => (
           <div
             className="choose-card"
-            key={service}
+            key={`${item.heading}-${index}`}
           >
-            <h2>{service}</h2>
-
-            <p>{description}</p>
+            <h2>{item.heading}</h2>
+            <p>{item.para}</p>
           </div>
         ))}
       </div>
