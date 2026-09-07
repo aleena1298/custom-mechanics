@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-
       <Hero />
       <TextMain
         line1="FAST-TRACK YOUR"
@@ -28,8 +27,8 @@ export default function Home() {
       <MainServiceBox />
       <LogoScrollMain />
       <VideoBox />
-      <ChooseUsBox 
-      items={homeChooseUs} />
+      <ChooseUsBox
+        items={homeChooseUs} />
       <FAQ />
       <Testimonials />
       <BookingSection />

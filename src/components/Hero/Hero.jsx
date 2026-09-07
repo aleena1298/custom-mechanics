@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,6 +15,8 @@ export default function Hero() {
   const secondaryBtnRef = useRef(null);
 
   const headingRefs = useRef([]);
+
+  const navigate = useNavigate();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -33,7 +36,6 @@ export default function Hero() {
           ease: "power4.out",
           stagger: 0.25,
         })
-
         .from(
           ".hero-para p",
           {
@@ -44,7 +46,6 @@ export default function Hero() {
           },
           "-=0.4"
         )
-
         .from(
           ".hero-buttons div",
           {
@@ -56,7 +57,6 @@ export default function Hero() {
           },
           "-=0.5"
         )
-
         .from(
           ".hero-image-section",
           {
@@ -126,11 +126,11 @@ export default function Hero() {
       });
     };
 
-    primaryBtn.addEventListener("mouseenter", primaryEnter);
-    primaryBtn.addEventListener("mouseleave", primaryLeave);
+    primaryBtn?.addEventListener("mouseenter", primaryEnter);
+    primaryBtn?.addEventListener("mouseleave", primaryLeave);
 
-    secondaryBtn.addEventListener("mouseenter", secondaryEnter);
-    secondaryBtn.addEventListener("mouseleave", secondaryLeave);
+    secondaryBtn?.addEventListener("mouseenter", secondaryEnter);
+    secondaryBtn?.addEventListener("mouseleave", secondaryLeave);
 
     headingRefs.current.forEach((heading) => {
       if (!heading) return;
@@ -161,14 +161,15 @@ export default function Hero() {
     });
 
     return () => {
-      primaryBtn.removeEventListener("mouseenter", primaryEnter);
-      primaryBtn.removeEventListener("mouseleave", primaryLeave);
+      primaryBtn?.removeEventListener("mouseenter", primaryEnter);
+      primaryBtn?.removeEventListener("mouseleave", primaryLeave);
 
-      secondaryBtn.removeEventListener(
+      secondaryBtn?.removeEventListener(
         "mouseenter",
         secondaryEnter
       );
-      secondaryBtn.removeEventListener(
+
+      secondaryBtn?.removeEventListener(
         "mouseleave",
         secondaryLeave
       );
@@ -192,7 +193,6 @@ export default function Hero() {
   return (
     <section className="hero" ref={heroRef}>
       <div className="hero-text">
-
         <div className="custom-text">
           <h1
             ref={(element) => {
@@ -226,6 +226,7 @@ export default function Hero() {
           <div
             className="hero-btn-primary"
             ref={primaryBtnRef}
+            onClick={() => navigate("/booknow")}
           >
             Book Now
           </div>
@@ -233,11 +234,11 @@ export default function Hero() {
           <div
             className="hero-btn-secondary"
             ref={secondaryBtnRef}
+            onClick={() => navigate("/marketplace")}
           >
             Marketplace
           </div>
         </div>
-
       </div>
 
       <div className="hero-image-section">
