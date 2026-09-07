@@ -4,12 +4,13 @@ import TextMain from "../../components/TextMain/TextMain.jsx";
 import MainServiceBox from "../../components/MainServiceBox/MainServiceBox.jsx";
 import LogoScrollMain from "../../components/LogoScrollMain/LogoScrollMain.jsx";
 import VideoBox from "../../components/VideoBox/VideoBox.jsx";
-import ChooseUsBox from "../../components/ChooseUsBox/ChooseUsBox.jsx";
 import FAQ from "../../components/FAQ/FAQ.jsx";
 import Testimonials from "../../components/Testimonials/Testimonials.jsx";
 import BookingSection from "../../components/BookingSection/BookingSection.jsx";
 import WhatsApp from "../../components/WhatsApp/WhatsApp.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
+import ChooseUsBox from "../../components/ChooseUsBox/ChooseUsBox";
+import { homeChooseUs } from "../../data/homeChooseUs";
 
 export default function Home() {
   return (
@@ -27,7 +28,8 @@ export default function Home() {
       <MainServiceBox />
       <LogoScrollMain />
       <VideoBox />
-      <ChooseUsBox />
+      <ChooseUsBox 
+      items={homeChooseUs} />
       <FAQ />
       <Testimonials />
       <BookingSection />

@@ -9,6 +9,7 @@ import BikeAndBatteryReplacement from "./Pages/BikeAndBatteryReplacement/BikeAnd
 import BrakeRepair from "./Pages/BrakeRepair/BrakeRepair.jsx";
 import CarbeuretorAndOil from "./Pages/CarbeuretorAndOil/CarbeuretorAndOil.jsx";
 import EngineRepair from "./Pages/EngineRepair/EngineRepair.jsx";
+import BookNow from "./Pages/BookNow/BookNow.jsx";
 function App() {
   return (
     <BrowserRouter>
@@ -58,6 +59,10 @@ function App() {
          path="/enginerepair"
          element={<EngineRepair />}
         />
+
+        <Route 
+        path="/booknow"
+        element={<BookNow/>} />
 
       </Routes>
     </BrowserRouter>

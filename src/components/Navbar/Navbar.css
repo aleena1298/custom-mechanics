@@ -69,6 +69,10 @@
   transition: color 0.3s ease;
 }
 
+.nav-link:hover {
+  color: var(--red-500);
+}
+
 .services-container {
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -124,6 +128,11 @@
   width: 100%;
   text-align: center;
   transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dropdown-link:hover {
+  background-color: #2d3748;
 }
 
 .book-now-button {
@@ -175,6 +184,28 @@
   transition:
     opacity 0.5s ease,
     visibility 0.5s;
+}
+
+.services-dropdown-mobile-active {
+  position: static;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform: translateY(0) !important;
+
+  margin-top: 0.5rem;
+
+  background-color: #000;
+
+  border: none;
+  box-shadow: none;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mobile-menu-content {
