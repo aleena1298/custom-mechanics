@@ -14,6 +14,7 @@ export default function MarketplaceBike({
   image,
   primaryBtnText,
   secondbtn,
+  secondarypath="/marketplace",
 }) {
   const sectionRef = useRef(null);
   const primaryBtnRef = useRef(null);
@@ -286,7 +287,7 @@ export default function MarketplaceBike({
           <div
             className="bike-parallax-btnsecondary"
             ref={secondaryBtnRef}
-            onClick={() => navigate("/accessories")}
+            onClick={() => navigate(secondarypath)}
           >
             {secondbtn || "MarketPlace"}
           </div>
@@ -328,7 +329,7 @@ return (
         <div
           className="standard-bike-btnsecondary"
           ref={secondaryBtnRef}
-          onClick={() => navigate("/accessories")}
+          onClick={() => navigate(secondarypath)}
         >
           {secondbtn || "MarketPlace"}
         </div>

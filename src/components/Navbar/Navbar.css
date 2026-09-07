@@ -225,7 +225,7 @@
 }
 
 .book-now-mobile {
-  margin-top: 1.5rem;
+  margin: 1rem;
 }
 
 @media (min-width: 768px) {

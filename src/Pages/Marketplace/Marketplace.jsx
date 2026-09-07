@@ -27,6 +27,7 @@ export default function Marketplace() {
         image={aerox}
         primaryBtnText="Purchase"
         secondbtn="Buy Accessories"
+        secondarypath="/accessories"
       />
 
       <MarketplaceBike
@@ -36,7 +37,8 @@ export default function Marketplace() {
         para="The 2025 NMAX Std is powered by a 125cc Blue Core engine with YECVT technology, delivering smooth performance and excellent fuel efficiency. It features LED lighting, a digital display, and comfortable seating for daily city rides."
         image={nmaxStd}
         primaryBtnText="Purchase"
-        secondBtnText="Buy Accessories"
+        secondbtn ="Buy Accessories"
+        secondarypath="/accessories"
       />
 
       <MarketplaceBike
@@ -46,6 +48,7 @@ export default function Marketplace() {
         image={nmaxTechMax}
         primaryBtnText="Purchase"
         secondbtn="Buy Accessories"
+        secondarypath="/accessories"
       />
 
       <MarketplaceBike
@@ -56,6 +59,7 @@ export default function Marketplace() {
         image={mio}
         primaryBtnText="Purchase"
         secondbtn="Buy Accessories"
+        secondarypath="/accessories"
       />
 
       <MarketplaceBike
@@ -66,6 +70,7 @@ export default function Marketplace() {
         image={gearUltimata}
         primaryBtnText="Purchase"
         secondbtn="Buy Accessories"
+        secondarypath="/accessories"
       />
 
       <MarketplaceBike
@@ -75,6 +80,7 @@ export default function Marketplace() {
         image={hondaCrf150}
         primaryBtnText="Purchase"
         secondbtn="Buy Accessories"
+        secondarypath="/accessories"
       />
 
       <MarketplaceBike
@@ -85,6 +91,7 @@ export default function Marketplace() {
         image={lexi}
         primaryBtnText="Purchase"
         secondbtn="Buy Accessories"
+        secondarypath="/accessories"
       />
 
       <MarketplaceBike
@@ -94,6 +101,7 @@ export default function Marketplace() {
         image={r125}
         primaryBtnText="Purchase"
         secondbtn="Buy Accessories"
+        secondarypath="/accessories"
       />
       <WhatsApp />
       <Footer />

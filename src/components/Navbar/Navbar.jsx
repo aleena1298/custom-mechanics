@@ -241,7 +241,7 @@ export default function Navbar() {
       >
         <div className="mobile-menu-content">
           <NavLinks mobile />
-          <Link to="/booknow" className="book-now-button">
+          <Link to="/booknow" className="book-now-button book-now-mobile">
             Book Now
           </Link>
         </div>
