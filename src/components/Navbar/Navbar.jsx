@@ -2,7 +2,7 @@ import "./Navbar.css";
 import logo from "../../assets/images/logo.png";
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 
 const mainLinks = [
@@ -63,9 +63,7 @@ function HamburgerIcon({ open }) {
         strokeLinecap="round"
         className="hamburger-line"
         style={{
-          transform: open
-            ? "rotate(45deg) translate(5px, 5px)"
-            : "none",
+          transform: open ? "rotate(45deg) translate(5px, 5px)" : "none",
           transformOrigin: "center",
           transition: "transform 0.3s ease",
         }}
@@ -90,9 +88,7 @@ function HamburgerIcon({ open }) {
         strokeLinecap="round"
         className="hamburger-line"
         style={{
-          transform: open
-            ? "rotate(-45deg) translate(5px, -5px)"
-            : "none",
+          transform: open ? "rotate(-45deg) translate(5px, -5px)" : "none",
           transformOrigin: "center",
           transition: "transform 0.3s ease",
         }}
@@ -102,34 +98,25 @@ function HamburgerIcon({ open }) {
 }
 
 export default function Navbar() {
-  const navigate = useNavigate();
-
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-
-  const goTo = (path) => {
-    navigate(path);
-
-    setMenuOpen(false);
-    setServicesOpen(false);
-  };
 
   const NavLinks = ({ mobile = false }) => {
     return (
       <div
-        className={`nav-links ${mobile
-            ? "nav-links-mobile"
-            : "nav-links-desktop"
-          }`}
+        className={`nav-links ${
+          mobile ? "nav-links-mobile" : "nav-links-desktop"
+        }`}
       >
         {mainLinks.map((link) => (
-          <a
+          <Link
             key={link.path}
+            to={link.path}
             className="nav-link"
-            onClick={() => goTo(link.path)}
+            onClick={closeMenus}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
 
         <div className="services-container">
@@ -137,19 +124,15 @@ export default function Navbar() {
             className="nav-link"
             onClick={() => {
               if (mobile) {
-                setServicesOpen(
-                  (previous) => !previous
-                );
+                setServicesOpen((previous) => !previous);
               }
             }}
           >
             Services
-
             <span
-              className={`chevron-wrapper ${mobile && servicesOpen
-                  ? "chevron-open"
-                  : ""
-                }`}
+              className={`chevron-wrapper ${
+                mobile && servicesOpen ? "chevron-open" : ""
+              }`}
             >
               <svg
                 className="chevron"
@@ -167,19 +150,19 @@ export default function Navbar() {
           </button>
 
           <div
-            className={`services-dropdown ${mobile && servicesOpen
-                ? "services-dropdown-mobile-active"
-                : ""
-              }`}
+            className={`services-dropdown ${
+              mobile && servicesOpen ? "services-dropdown-mobile-active" : ""
+            }`}
           >
             {serviceLinks.map((link) => (
-              <a
+              <Link
                 key={link.path}
+                to={link.path}
                 className="dropdown-link"
-                onClick={() => goTo(link.path)}
+                onClick={closeMenus}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -187,22 +170,19 @@ export default function Navbar() {
     );
   };
 
+  const closeMenus = () => {
+    setMenuOpen(false);
+    setServicesOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         {/* LOGO */}
         <div className="logo-wrapper">
-          <a
-            href="#"
-            className="logo-link"
-            onClick={() => navigate("/")}
-          >
-            <img
-              src={logo}
-              alt="Custom Mechanics Logo"
-              className="logo-img"
-            />
-          </a>
+          <Link to="/" className="logo-link">
+            <img src={logo} alt="Custom Mechanics Logo" className="logo-img" />
+          </Link>
         </div>
 
         {/* DESKTOP */}
@@ -220,11 +200,7 @@ export default function Navbar() {
             className="mobile-menu-button"
             aria-controls="mobile-menu"
             aria-expanded={menuOpen}
-            onClick={() =>
-              setMenuOpen(
-                (previous) => !previous
-              )
-            }
+            onClick={() => setMenuOpen((previous) => !previous)}
           >
             <HamburgerIcon open={menuOpen} />
           </button>
@@ -234,10 +210,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div
         id="mobile-menu"
-        className={`mobile-menu ${menuOpen
-            ? "mobile-menu-open"
-            : ""
-          }`}
+        className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
       >
         <div className="mobile-menu-content">
           <NavLinks mobile />

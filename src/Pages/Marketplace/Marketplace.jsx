@@ -9,10 +9,9 @@ import nmaxStd from "../../assets/images/yamaha nmax std.png";
 import nmaxTechMax from "../../assets/images/Yamaha Nmax Tech max].png";
 import mio from "../../assets/images/Yamaha mio.png";
 import gearUltimata from "../../assets/images/Yamaha gear ultimata.png";
-import hondaCrf150 from "../../assets/images/Honda CRF 150.png";
-import lexi from "../../assets/images/Yamaha Lexi.png";
+import hondaCrf150 from "../../assets/images/Honda crf 150.png";
+import lexi from "../../assets/images/yamaha Lexi.png";
 import r125 from "../../assets/images/Yamaha r125.png";
-
 
 export default function Marketplace() {
   return (
@@ -37,7 +36,7 @@ export default function Marketplace() {
         para="The 2025 NMAX Std is powered by a 125cc Blue Core engine with YECVT technology, delivering smooth performance and excellent fuel efficiency. It features LED lighting, a digital display, and comfortable seating for daily city rides."
         image={nmaxStd}
         primaryBtnText="Purchase"
-        secondbtn ="Buy Accessories"
+        secondbtn="Buy Accessories"
         secondarypath="/accessories"
       />
 
