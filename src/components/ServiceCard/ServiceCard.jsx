@@ -6,6 +6,7 @@ export default function ServiceCard({
   para,
   image,
   btn,
+  path = "/booknow",
 }) {
   const navigate = useNavigate();
 
@@ -17,15 +18,20 @@ export default function ServiceCard({
         <p>{para}</p>
 
         <button
+          type="button"
           className="service-card-btn"
-          onClick={() => navigate("/booknow")}
+          onClick={() => navigate(path)}
         >
           {btn}
         </button>
       </div>
 
       <div className="service-card-img">
-        <img src={image} alt="" />
+        <img
+          src={image}
+          alt={heading}
+          loading="lazy"
+        />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import CardSection from "../../components/CardSection/CardSection";
 import { batteryCards } from "../../data/batteryCards";
 import { batteryChooseUs } from "../../data/batteryChooseUs";
 
-import video from "../../assets/videos/1125.mp4";
+import video from "../../assets/videos/1125-optimized.mp4";
 import battery from "../../assets/images/battery.png";
 import clip from "../../assets/images/clip.png";
 

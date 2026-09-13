@@ -2,7 +2,6 @@ import "./Navbar.css";
 import logo from "../../assets/images/logo.png";
 
 import { useState } from "react";
-
 import { Link } from "react-router-dom";
 
 const mainLinks = [
@@ -63,7 +62,9 @@ function HamburgerIcon({ open }) {
         strokeLinecap="round"
         className="hamburger-line"
         style={{
-          transform: open ? "rotate(45deg) translate(5px, 5px)" : "none",
+          transform: open
+            ? "rotate(45deg) translate(5px, 5px)"
+            : "none",
           transformOrigin: "center",
           transition: "transform 0.3s ease",
         }}
@@ -88,7 +89,9 @@ function HamburgerIcon({ open }) {
         strokeLinecap="round"
         className="hamburger-line"
         style={{
-          transform: open ? "rotate(-45deg) translate(5px, -5px)" : "none",
+          transform: open
+            ? "rotate(-45deg) translate(5px, -5px)"
+            : "none",
           transformOrigin: "center",
           transition: "transform 0.3s ease",
         }}
@@ -97,78 +100,92 @@ function HamburgerIcon({ open }) {
   );
 }
 
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+function NavLinks({
+  mobile = false,
+  servicesOpen,
+  setServicesOpen,
+  closeMenus,
+}) {
+  return (
+    <div
+      className={`nav-links ${
+        mobile
+          ? "nav-links-mobile"
+          : "nav-links-desktop"
+      }`}
+    >
+      {mainLinks.map((link) => (
+        <Link
+          key={link.path}
+          to={link.path}
+          className="nav-link"
+          onClick={closeMenus}
+        >
+          {link.label}
+        </Link>
+      ))}
 
-  const NavLinks = ({ mobile = false }) => {
-    return (
-      <div
-        className={`nav-links ${
-          mobile ? "nav-links-mobile" : "nav-links-desktop"
-        }`}
-      >
-        {mainLinks.map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            className="nav-link"
-            onClick={closeMenus}
-          >
-            {link.label}
-          </Link>
-        ))}
+      <div className="services-container">
+        <button
+          type="button"
+          className="nav-link"
+          onClick={() => {
+            if (mobile) {
+              setServicesOpen((previous) => !previous);
+            }
+          }}
+        >
+          Services
 
-        <div className="services-container">
-          <button
-            className="nav-link"
-            onClick={() => {
-              if (mobile) {
-                setServicesOpen((previous) => !previous);
-              }
-            }}
-          >
-            Services
-            <span
-              className={`chevron-wrapper ${
-                mobile && servicesOpen ? "chevron-open" : ""
-              }`}
-            >
-              <svg
-                className="chevron"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-
-          <div
-            className={`services-dropdown ${
-              mobile && servicesOpen ? "services-dropdown-mobile-active" : ""
+          <span
+            className={`chevron-wrapper ${
+              mobile && servicesOpen
+                ? "chevron-open"
+                : ""
             }`}
           >
-            {serviceLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="dropdown-link"
-                onClick={closeMenus}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+            <svg
+              className="chevron"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <div
+          className={`services-dropdown ${
+            mobile && servicesOpen
+              ? "services-dropdown-mobile-active"
+              : ""
+          }`}
+        >
+          {serviceLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className="dropdown-link"
+              onClick={closeMenus}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+}
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] =
+    useState(false);
 
   const closeMenus = () => {
     setMenuOpen(false);
@@ -178,43 +195,78 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* LOGO */}
         <div className="logo-wrapper">
-          <Link to="/" className="logo-link">
-            <img src={logo} alt="Custom Mechanics Logo" className="logo-img" />
+          <Link
+            to="/"
+            className="logo-link"
+            onClick={closeMenus}
+          >
+            <img
+              src={logo}
+              alt="Custom Mechanics Logo"
+              className="logo-img"
+            />
           </Link>
         </div>
 
-        {/* DESKTOP */}
         <div className="desktop-nav">
-          <NavLinks />
+          <NavLinks
+            servicesOpen={servicesOpen}
+            setServicesOpen={setServicesOpen}
+            closeMenus={closeMenus}
+          />
 
-          <Link to="/booknow" className="book-now-button">
+          <Link
+            to="/booknow"
+            className="book-now-button"
+          >
             Book Now
           </Link>
         </div>
 
-        {/* MOBILE BUTTON */}
         <div className="mobile-menu-button-container">
           <button
+            type="button"
             className="mobile-menu-button"
+            aria-label={
+              menuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
             aria-controls="mobile-menu"
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((previous) => !previous)}
+            onClick={() => {
+              setMenuOpen((previous) => !previous);
+
+              if (menuOpen) {
+                setServicesOpen(false);
+              }
+            }}
           >
             <HamburgerIcon open={menuOpen} />
           </button>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
       <div
         id="mobile-menu"
-        className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
+        className={`mobile-menu ${
+          menuOpen ? "mobile-menu-open" : ""
+        }`}
       >
         <div className="mobile-menu-content">
-          <NavLinks mobile />
-          <Link to="/booknow" className="book-now-button book-now-mobile">
+          <NavLinks
+            mobile
+            servicesOpen={servicesOpen}
+            setServicesOpen={setServicesOpen}
+            closeMenus={closeMenus}
+          />
+
+          <Link
+            to="/booknow"
+            className="book-now-button book-now-mobile"
+            onClick={closeMenus}
+          >
             Book Now
           </Link>
         </div>

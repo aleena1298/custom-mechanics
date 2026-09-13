@@ -1,4 +1,3 @@
-import React from "react";
 import "./MainServiceBox.css";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";

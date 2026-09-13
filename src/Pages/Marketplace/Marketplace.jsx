@@ -10,7 +10,7 @@ import nmaxTechMax from "../../assets/images/Yamaha Nmax Tech max].png";
 import mio from "../../assets/images/Yamaha mio.png";
 import gearUltimata from "../../assets/images/Yamaha gear ultimata.png";
 import hondaCrf150 from "../../assets/images/Honda crf 150.png";
-import lexi from "../../assets/images/yamaha Lexi.png";
+import lexi from "../../assets/images/yamaha lexi.png";
 import r125 from "../../assets/images/Yamaha r125.png";
 
 export default function Marketplace() {

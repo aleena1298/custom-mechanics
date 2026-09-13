@@ -1,0 +1,63 @@
+.not-found {
+  min-height: calc(100vh - 5rem);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background-color: #000;
+  color: #fff;
+
+  padding: 2rem;
+}
+
+.not-found h1 {
+  font-family: "Bebas Neue", sans-serif;
+
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 400;
+
+  color: #f01717;
+
+  line-height: 1;
+}
+
+.not-found h2 {
+  font-family: "Bebas Neue", sans-serif;
+
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+
+  margin-bottom: 1rem;
+}
+
+.not-found p {
+  font-family: sans-serif;
+
+  color: #a8a8a8;
+
+  margin-bottom: 2rem;
+}
+
+.not-found-link {
+  font-family: sans-serif;
+
+  background-color: #f01717;
+  color: #fff;
+
+  padding: 1rem 2rem;
+
+  text-decoration: none;
+
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.not-found-link:hover {
+  background-color: #b30000;
+}

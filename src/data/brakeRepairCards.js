@@ -6,7 +6,7 @@ export const brakeRepairCards = [
         heading: "Brake Repair",
         para: "Specializes in bike brake repair in Bermuda, offering a range of services tailored to meet the needs of every cyclist. Whether you require a simple brake tune-up or a complete brake replacement, our expertise ensures your bike is safe and ready for the road.",
         image: brokenbrakesmall,
-        btn: "Replace Brake"
+        btn: "Repair Brakes"
 
     },
     {

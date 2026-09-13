@@ -10,19 +10,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const heroRef = useRef(null);
-
   const primaryBtnRef = useRef(null);
   const secondaryBtnRef = useRef(null);
-
   const headingRefs = useRef([]);
 
   const navigate = useNavigate();
 
   useLayoutEffect(() => {
+    const hero = heroRef.current;
+
+    if (!hero) return;
+
     const ctx = gsap.context(() => {
       const timeline = gsap.timeline({
         scrollTrigger: {
-          trigger: heroRef.current,
+          trigger: hero,
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -67,7 +69,7 @@ export default function Hero() {
           },
           "-=0.8"
         );
-    }, heroRef);
+    }, hero);
 
     return () => {
       ctx.revert();
@@ -77,8 +79,11 @@ export default function Hero() {
   useLayoutEffect(() => {
     const primaryBtn = primaryBtnRef.current;
     const secondaryBtn = secondaryBtnRef.current;
+    const headings = [...headingRefs.current];
 
     const hoverIn = (element, options = {}) => {
+      if (!element) return;
+
       gsap.to(element, {
         scale: options.scale || 1.05,
         backgroundColor: options.bg || "transparent",
@@ -91,6 +96,8 @@ export default function Hero() {
     };
 
     const hoverOut = (element, options = {}) => {
+      if (!element) return;
+
       gsap.to(element, {
         scale: 1,
         backgroundColor: options.bg || "transparent",
@@ -132,7 +139,7 @@ export default function Hero() {
     secondaryBtn?.addEventListener("mouseenter", secondaryEnter);
     secondaryBtn?.addEventListener("mouseleave", secondaryLeave);
 
-    headingRefs.current.forEach((heading) => {
+    headings.forEach((heading) => {
       if (!heading) return;
 
       const headingEnter = () => {
@@ -174,7 +181,7 @@ export default function Hero() {
         secondaryLeave
       );
 
-      headingRefs.current.forEach((heading) => {
+      headings.forEach((heading) => {
         if (!heading) return;
 
         heading.removeEventListener(
@@ -186,6 +193,9 @@ export default function Hero() {
           "mouseleave",
           heading._headingLeave
         );
+
+        delete heading._headingEnter;
+        delete heading._headingLeave;
       });
     };
   }, []);

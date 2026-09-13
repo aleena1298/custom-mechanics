@@ -1,4 +1,3 @@
-import React from 'react'
 import WhatsApp from '../../components/WhatsApp/WhatsApp';
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'

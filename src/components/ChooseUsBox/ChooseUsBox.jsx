@@ -13,8 +13,16 @@ export default function ChooseUsBox({
   const sectionRef = useRef(null);
 
   useLayoutEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const cards = Array.from(
+      section.querySelectorAll(".choose-card")
+    );
+
     const ctx = gsap.context(() => {
-      gsap.from(".choose-card", {
+      gsap.from(cards, {
         y: 50,
         opacity: 0,
         duration: 1,
@@ -22,17 +30,18 @@ export default function ChooseUsBox({
         stagger: 0.1,
 
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: section,
           start: "top 80%",
           end: "bottom 40%",
           toggleActions: "play none none reverse",
         },
       });
 
-      gsap.utils.toArray(".choose-card").forEach((card) => {
+      cards.forEach((card) => {
         const scaleAnimation = gsap.to(card, {
           scale: 1.05,
-          boxShadow: "0px 10px 25px rgba(255,40,40,0.25)",
+          boxShadow:
+            "0px 10px 25px rgba(255,40,40,0.25)",
           borderColor: "rgb(255,40,40)",
           duration: 0.4,
           ease: "power2.out",
@@ -87,23 +96,45 @@ export default function ChooseUsBox({
           resetRotation();
         };
 
-        card.addEventListener("mouseenter", handleMouseEnter);
-        card.addEventListener("mousemove", handleMouseMove);
-        card.addEventListener("mouseleave", handleMouseLeave);
+        card.addEventListener(
+          "mouseenter",
+          handleMouseEnter
+        );
 
-        // Make GSAP context aware of cleanup
+        card.addEventListener(
+          "mousemove",
+          handleMouseMove
+        );
+
+        card.addEventListener(
+          "mouseleave",
+          handleMouseLeave
+        );
+
         card._chooseCleanup = () => {
-          card.removeEventListener("mouseenter", handleMouseEnter);
-          card.removeEventListener("mousemove", handleMouseMove);
-          card.removeEventListener("mouseleave", handleMouseLeave);
+          card.removeEventListener(
+            "mouseenter",
+            handleMouseEnter
+          );
+
+          card.removeEventListener(
+            "mousemove",
+            handleMouseMove
+          );
+
+          card.removeEventListener(
+            "mouseleave",
+            handleMouseLeave
+          );
         };
       });
-    }, sectionRef);
+    }, section);
 
     return () => {
-      sectionRef.current
-        ?.querySelectorAll(".choose-card")
-        .forEach((card) => card._chooseCleanup?.());
+      cards.forEach((card) => {
+        card._chooseCleanup?.();
+        delete card._chooseCleanup;
+      });
 
       ctx.revert();
     };

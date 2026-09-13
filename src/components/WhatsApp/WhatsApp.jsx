@@ -1,4 +1,3 @@
-import React from "react";
 import "./WhatsApp.css";
 
 export default function WhatsApp() {
